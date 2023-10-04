@@ -1,0 +1,29 @@
+import logo from "assets/images/new-logo.png";
+import logoDark from "assets/images/new-logo.png";
+
+import { useSelector } from "react-redux";
+
+// ==============================|| LOGO ||============================== //
+
+const Logo = () => {
+  const customization = useSelector((state) => state.customization);
+
+  return (
+    <div
+      style={{
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "row",
+        marginLeft: "20px",
+      }}
+    >
+      <img
+        style={{ objectFit: "contain", height: "auto", width: 140 }}
+        src={customization.isDarkMode ? logoDark : logo}
+        alt="Flowise"
+      />
+    </div>
+  );
+};
+
+export default Logo;
